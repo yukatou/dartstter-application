@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <%= csrf_meta_tag %>
+  <title><%= @title %></title>
+  <%= stylesheet_link_tag 'jquery.mobile-1.0a4.1' %>
+  <%= stylesheet_link_tag 'smart_phone.style' %>
+  <%= javascript_include_tag 'jquery' %>
+  <%= javascript_include_tag 'rails' %>
+
+  <script type="text/javascript">
+    $(document).bind("mobileinit", function(){
+     // $.mobile.ajaxLinksEnabled = false; // Ajax を使用したページ遷移を無効にする
+      $.mobile.ajaxFormsEnabled = false; // Ajax を使用したフォーム遷移を無効にする
+    });
+  </script>
+  
+  <%= javascript_include_tag 'jquery.mobile-1.0a4.1.min' %>
+  <%= javascript_include_tag 'jquery.base64' %>
+  <%= javascript_include_tag 'jquery.cookie' %>
+  <%= javascript_include_tag 'smart_phone' %>
+  <%= javascript_include_tag 'smart_phone.setting' %>
+</head>
+<body>
+<div id="box">
+<header>
+  <h1><%= link_to(image_tag("dartstter_logo.png", :size=>"150x40"), :action=>"index") %></h1>
+  <div id="setBtn">
+    <%= link_to("設定", {:action=>"setting"}, {:class=>"button white"}) %>
+  </div>
+</header>
+<%= yield %>
+<footer>
+  <p>(C)<%= Time.now.year %> darstter.net</p>
+</footer>
+</div>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-333569-9']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>

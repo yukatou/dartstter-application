@@ -1,0 +1,14 @@
+<div id="wrapper">
+  <div id="header">
+    <div id="logo">
+      <h1><%= link_to(image_tag('logo.png', :alt => "ダーツったー [ダーツライブ×Twitter]"), {:controller=>"index", :action=>"index"}) %></h1>
+    </div>
+    <div id="menu" class="corner">
+      <ul>
+        <li><%= link_to('ホーム', :action => 'index') %></li>
+        <li><%= link_to('つぶやく', :action => 'get_tweet') %></li>
+        <li><%= link_to('各種設定', :action => 'setting') %></li>
+        <li><%= link_to('お問い合わせ', :action => 'help') %></li>
+      </ul>
+    </div>
+  </div>

@@ -1,0 +1,28 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<title>ダーツったー</title>
+</head>
+<body>
+<font size="2">
+<center>
+
+<%= link_to(image_tag("dartstter_logo.png", :size=>"185x50"), :action=>"index") %>
+<br>
+<marquee bgcolor="#00bfff"><font color="#ffffff">ダーツったーで今日の結果をつぶやこう！</font></marquee>
+</center>
+<br><br>
+<%= yield %>
+<br>
+<br>
+<hr color="#ff9999" size="1">
+<center>
+<font color="green">PR</font><br>
+<a href="http://px.moba8.net/svt/ejp?a8mat=1TQBX9+FMMNG2+HVC+BY642&guid=on">話題のダーツココでゲット!!<br>
+とりあえず、チェック!</a>
+<img border="0" width="1" height="1" src="http://www12.moba8.net/0.jpg?a8mat=1TQBX9+FMMNG2+HVC+BY642&guid=on" alt="">
+<br>
+<br>
+<center>(c) <%= Time.now().year %> www.dartstter.net</center>
+</body>
+</html>

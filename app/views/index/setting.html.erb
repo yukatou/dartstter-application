@@ -1,0 +1,33 @@
+<div id='section'>
+  <div id="main" class="leftcorner">
+    <div class="pad">
+
+      <h2>ダーツライブのデータ</h2>
+      <div id="setting_contents" class="inpad">
+        <p>ダーツライブのカードデータを入力してログインを押してください。<br />クッキーを有効にしてある必要が有ります。</p>
+        <div id="stylized" class="myform">
+          <form id="form" name="form">
+            <label>カードNo.</label>
+            <input type="text" name="cardno" id="cardno" />
+            <label>パスワード</label>
+            <input type="password" name="passwd" id="passwd" />
+            <div class="center">
+              <button type="reset" id="resetDataBtn" class="button white">リセット</button>
+              <button id="loginBtn" class="button white">ログイン</button>
+            </div>
+          </form>
+        </div> 
+      </div>
+
+      <h2>Twitterログイン</h2>
+      <div class="inpad">
+        <p>Twitterとダーツったーの連携を行います。アカウントの連携・変更を行いたい場合はボタンを押してください。</p>
+        <p class="center">
+          <%= link_to(image_tag("twitter_login.png"), :controller=>"twitter", :action=>"oauth") %>
+        </p>
+      </div>
+
+    </div>
+  </div><!--/main-->
+  <%= render "shared/sidebar" %>
+</div><!--/section-->

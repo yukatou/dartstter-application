@@ -1,0 +1,48 @@
+<div id='section'>
+  <div id="bigbanner">
+    <p>ダーツったーを使えばダーツライブのスタッツ、アワードをTwitterにつぶやくことができます。ダーツったーで今日の結果をつぶやいてみんなに伝えよう！</p>
+  </div>
+  <div id="main">
+    <div class="pad">
+
+      <h2>トピックス</h2>
+      <div id="news" class="inpad">
+        <ul>
+          <li>2011-06-09 <a href="http://itunes.apple.com/ja/app/id439577476?mt=8&ls=1">iPhoneアプリをリリースしました</a></li>
+          <li>2011-06-02 リニューアルしました。</li>
+          <li>2011-04-02 サービスを開始しました。</li>
+        </ul>
+      </div>
+
+      <h2>使い方</h2>
+      <div id="step" class="inpad">
+        <h3>Step.1 初期設定をしよう</h3>
+        <p><%= link_to("各種設定ページ", :action=>"setting") %> でダーツライブのカードNo. と パスワードを入力し、保存ボタンを押してください。また、Twitterにログインをしてダーツったーと連携をしてください。</p>
+        <h3>Step.2 つぶやこう</h3>
+        <p><%= link_to("つぶやくページ", :action=>"setting") %> で「今日のスタッツ」「今日のアワード」「今日のCOUNT UP」の中からライブデータでつぶやきたいものをクリックしてください。テキストエリアに表示されますので適宜修正を行ってツイートボタンを押してください。</p>
+      </div>
+
+      <h2>新着ツイート</h2>
+      <div id="tweetlist" class="inpad">
+        <% @timeline.each do |row| %>
+        <div class="tweet">
+          <div class="image">
+            <img height="36" width="36" src="<%= row[:profile_image_url] %>" />
+          </div>
+          <div class="text">
+            <span class="username">
+              <%= link_to(row[:screen_name], "http://twitter.com/#{row[:screen_name]}") %>
+            </span>
+            <span class="entry-content"><%= row[:text].html_safe %></span><br />
+            <span class="time"><%= row[:created_at] %></span>
+          </div>
+        </div>
+        <% end %>
+      </div><!--/tweetlist -->
+
+
+
+    </div>
+  </div><!--/main-->
+  <%= render "shared/sidebar" %>
+</div><!--/section-->

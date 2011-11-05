@@ -1,0 +1,62 @@
+<div id="top" data-role="page">
+  <div data-role="header" data-theme="hoge" id="header" data-backbtn="false">
+    <h1><%= link_to(image_tag("dartstter_logo.png", :size=>"150x40"), :action=>"index") %></h1>
+    <a href="setting" class="ui-btn-right" data-icon="gear">設定</a>
+  </div>
+  <div data-role="content" id="section" data-theme="d"> 
+    <% if flash[:message] %>
+    <div id="message">
+      <p><%= flash[:message] %></p>
+    </div>
+    <% end %>
+    <h3>NEWS</h3>
+    <div id="news">
+      <ul>
+        <li>2011-06-09 <a href="http://itunes.apple.com/ja/app/id439577476?mt=8&ls=1">iPhoneアプリをリリースしました</a></li>
+        <li>2011-05-01 スマートフォンサイトのリニューアルを行いました。</li>
+      </ul>
+    </div>
+    <h3>CARD DATA</h3>
+    <div id="live_data">
+      <p>読み込み中...</p>
+    </div>
+    <h3>TWEET MENU</h3>
+    <div id="tweet_menu">
+      <a href="javascript:void(0)" id="statsBtn">今日のスタッツ</a>
+      <a href="javascript:void(0)" id="countupBtn">今日のCOUNT UP</a>
+      <a href="javascript:void(0)" id="awardBtn">今日のアワード</a>
+    </div>
+    <% unless cookies[:twitter_token] %>
+      <p class="red">Twitterにログインしてください</p>
+      <div class="center">
+      <%= link_to(image_tag("twitter_login.png"), {:controller=>"twitter", :action=>"oauth"}, {:rel=> "external"}) %>
+      </div>
+    <% end %>
+    <div id="bottom">
+    <ul id="info">
+      <li><%= link_to("ヘルプ", :action=>"help") %></li>
+      <li><a href="http://px.a8.net/svt/ejp?a8mat=1TOI17+69NCLE+2BM0+61JSI" target="_blank">PR: ダーツショップ【DARTS HiVe】</a></li>
+    </ul>
+    <img border="0" width="1" height="1" src="http://www18.a8.net/0.gif?a8mat=1TOI17+69NCLE+2BM0+61JSI" alt="">
+    </div>
+  </div>
+  <%= render 'shared/adsense' %>
+  <%= render 'shared/footer' %>
+</div>
+
+<div id="tweet" data-role="page">
+  <div data-role="header" data-theme="hoge" id="header">
+    <a href="index" data-icon="arrow-l" data-rel="back" data-transition="slide" data-direction="reverse">戻る</a>
+    <h1><%= link_to(image_tag("dartstter_logo.png", :size=>"150x40"), :action=>"index") %></h1>
+  </div>
+  <div data-role="content" id="section" data-theme="d"> 
+    <h3>TWEET</h3>
+    <div class="pad">
+      <p>ツイート内容を確認してツイートボタンを押してください</p>
+      <textarea id="tweetContents"><%= @tweet_contents %></textarea>
+      <input type="button" id="tweetBtn" value="ツイート" />
+    </div>
+  </div><!-- /content -->
+  <%= render 'shared/adsense' %>
+  <%= render 'shared/footer' %>
+</div><!-- /page -->

@@ -1,0 +1,38 @@
+<div id="help" data-role="page">
+  <div data-role="header" data-theme="hoge" id="header">
+    <a href="index" data-icon="arrow-l" data-rel="back" data-direction="reverse">戻る</a>
+    <h1><%= link_to(image_tag("dartstter_logo.png", :size=>"150x40"), :action=>"index") %></h1>
+  </div>
+  <div data-role="content" id="section" data-theme="d"> 
+    <div id="help_contents">
+      <p>ダーツったーはダーツライブのカードデータをTwitterにつぶやくことができます。</p>
+      <h3>対象ユーザ</h3>
+      <p>だーつったーの全ての機能を使用するには以下の条件を満たしている必要が有ります。</p>
+      <ul>
+        <li>ダーツライブ有料会員</li>
+        <li>Twitterユーザ</li>
+      </ul>
+        <h3>使用方法</h3>
+        <h4>1. ダーツライブのカードデータを入力</h4>
+        <p>メニューの<%= link_to("設定", :action=>"setting") %>にアクセスしてダーツライブのカードNo. と パスワードを入力し、ログインボタンを押してください。</p>
+        <h4>2. Twitterとアカウント連携を行う</h4>
+        <p><%= link_to("トップページ", :action=>"index") %>の上部に表示されているTwitterログインボタンを押します。この操作により、安全にTwitterとのアカウント連携が行えます。</p>
+        <h4>3. ツイート対象を選択</h4>
+        <p>「今日のスタッツ」「今日のアワード」「いまここ」の中からライブデータでつぶやきたいものをクリックしてください。テキストエリアに表示されますので適宜修正を行ってツイートボタンを押してください。</p>
+        
+
+      <h3>注意</h3>
+      <p>※ ダーツライブのカードデータは会員登録している物に限ります。</p>
+        <p>※ CookieとJavascriptと有効にする必要があります。</p>
+      <h3>情報元</h3>
+      <ul>
+        <li><a href="http://www.dartslive.jp/">ダーツライブ</a></li>
+        <li><a href="http://twitter.com/">Twitter</a></li>
+      </ul>
+      <h3>バグ報告・お問い合わせ</h3>
+      <p>Mail:<%= Settings.email %></p>
+      <p>Twitter:<a href='http://twitter.com/#!/katoyan_'>@katoyan_</a></p>
+    </div>
+  </div><!-- /content -->
+  <%= render 'shared/footer' %>
+</div><!-- /page -->

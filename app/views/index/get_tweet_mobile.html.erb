@@ -1,0 +1,22 @@
+<% if @error_message %>
+  <font color="red"><%= @error_message %></font>
+  <br />
+  <br />
+  <center>
+    <%= link_to("0.戻る",{:action=>"index"}, {:accesskey=>0} )%> 
+  </center>
+<% else %>
+  <font color="#ff8c00">■</font> <font>以下の内容で宜しければつぶやくを押してください</font>
+  <br />
+  <br />
+  <center>
+  <%= form_tag(:action=> "confirm") do %>
+  <%= text_area_tag("tweet_contents", @tweet_contents) %>
+  <%= hidden_field_tag("kind", @kind) %>
+  <br />
+  <br />
+  <%= submit_tag("確認画面へ") %>
+  <% end %>
+  <%= link_to("0.戻る",{:action=>"index"}, {:accesskey=>0} ) %> 
+  </center>
+<% end %>

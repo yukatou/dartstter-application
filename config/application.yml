@@ -1,0 +1,15 @@
+defaults: &defaults
+  application_name: "ダーツったー"
+  version: "0.0.1"
+  email: "dartstter＠hotmail.com"
+
+development:
+  <<: *defaults
+  alert: false
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  alert: true

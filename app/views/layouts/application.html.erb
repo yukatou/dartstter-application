@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %> [ダーツライブ×Twitter]</title>
+  <meta name="keywords" content="ダーツ, ダーツライブ, Twitter" />
+  <meta name="description" content="ダーツったーはダーツライブのカードデータとTwitterの機能を組み合わせたWebアプリケーションです。" />
+  <meta name="robots" content="index,follow,noarchive" /> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <%= csrf_meta_tag %>
+  <link rel="icon" type="image/png" href="/assets/apple-touch-icon.png" />
+  <%= stylesheet_link_tag 'style' %>
+  <%= javascript_include_tag 'jquery.min' %>
+  <%= javascript_include_tag 'rails' %>
+  <%= javascript_include_tag 'jquery.base64' %>
+  <%= javascript_include_tag 'jquery.cookie' %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'application.tweet' if controller.action_name == "get_tweet" %>
+  <%= javascript_include_tag 'application.setting' if controller.action_name == "setting" %> 
+</head>
+<body>
+<%= render 'shared/header' %>
+<%= yield %>
+<%= render 'shared/footer' %>
+
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js">
+  {lang: 'ja'}
+</script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-333569-9']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</body>
+</html>

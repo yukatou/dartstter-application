@@ -1,0 +1,23 @@
+<div id="setting" data-role="page">
+  <div data-role="header" data-theme="hoge" id="header">
+    <a href="index" data-icon="arrow-l" data-rel="back" data-direction="reverse">戻る</a>
+    <h1><%= link_to(image_tag("dartstter_logo.png", :size=>"150x40"), :action=>"index") %></h1>
+  </div>
+  <div data-role="content" id="section" data-theme="d"> 
+    <h3>DARTS LIVE</h3>
+    <div class="pad">
+      <p>ダーツライブのカード情報を入力してログインを押してください</p>
+        <label for="cardno">カード番号:</label>
+        <input type="text" name="cardno" id="cardno" />
+        <label for="passwd">パスワード:</label>
+        <input type="password" name="passwd" id="passwd" />
+        <input type="button" id="loginBtn" value="ログイン" data-theme="b"/>
+    </div>
+    <h3>TWITTER</h3>
+    <div class="pad">
+      <p>Twitterにログインしてアカウント(OAuth)認証をしてください</p>
+      <%= link_to(image_tag("twitter_login.png"), {:controller=>"twitter", :action=>"oauth"}, {:rel=>"external"}) %>
+    </div>
+  </div><!-- /content -->
+  <%= render 'shared/footer' %>
+</div><!-- /page -->

@@ -1,0 +1,24 @@
+<div id="home" data-role="page">
+  <%= render 'shared/header' %>
+  <div data-role="content">
+      <p class="center">【お知らせ】<br />ただいま試行運用中ですm(__ __)m</p>
+      <ul data-role="listview" data-inset="true" data-theme="d" data-dividertheme="b">
+        <li data-role="list-divider">menu</li>
+        <li><a href="tweet">つぶやく</a></li>
+        <li><a href="tweet_list">ツイートリスト</a></li>
+        <li><a href="map">いまどこマップ</a></li>
+      </ul>
+      <ul data-role="listview" data-inset="true" data-theme="d" data-dividertheme="e">
+        <li data-role="list-divider" data-theme="a">info</li>
+        <li><a href="setting">各種設定（必須）</a></li>
+        <li><a href="help">ヘルプ</a></li>
+      </ul>
+      <p>iPhoneユーザはホーム画面への登録をおすすめします★</p>
+
+      <div class="center">
+        <a href="http://px.a8.net/svt/ejp?a8mat=1TOI17+69NCLE+2BM0+61JSI" target="_blank">ダーツショップ【DARTS　HiVe】</a>
+        <img border="0" width="1" height="1" src="http://www18.a8.net/0.gif?a8mat=1TOI17+69NCLE+2BM0+61JSI" alt="">
+      </div>
+  </div><!-- /content -->
+  <%= render 'shared/footer' %>
+</div>

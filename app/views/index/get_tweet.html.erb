@@ -1,0 +1,46 @@
+
+<div id='section'>
+  <div id="main">
+    <div class="pad">
+      
+      <% if flash[:message] %>
+        <p id="message"><%= flash[:message] %></p>
+      <% end%>
+      
+      <% if flash[:error_message] %>
+        <p id="error_message">ERROR! <%= flash[:error_message] %></p>
+      <% end%>
+
+      <h2>ダーツライブ データ</h2>
+      <div id="live_data_area" class="inpad">
+        <div id="live_data"></div>
+      </div>
+
+      <h2>ツイートしたい物を選んでね</h2>
+      <div id="tweetarea" class="inpad">
+        <div style="padding:15px 0px;"> 
+          <input type="button" class="button orange" id="statsBtn" value="今日のスタッツ"/>
+          <input type="button" class="button green" id="awardBtn" value="今日のアワード"/>
+          <input type="button" class="button blue" id="countupBtn" value="今日のCOUNT UP"/>
+        <!--  <input type="button" class="button rosy" id="shopBtn" value="いまここ"/>-->
+        </div>
+        <div id="tweetBox">
+          <%= form_tag(:action => "tweet") do %>
+          <%= image_tag("loading.gif", :size=>"20x20", :id=>"loading") %>
+          <%= text_area_tag("tweetContents","", {:class=>"corner"}) %>
+          <div class="right">
+            <% unless cookies[:twitter_token] %>
+            <%= submit_tag("ツイートできません",{:class=> "button white", :disabled=>"true"}) %>
+            <% else %>
+            <%= submit_tag("ツイート",{:class=> "button white", :disable_with=>"送信中", :onclick => "if($('#tweetContents').val() == '') return false" }) %>
+            <% end %>
+          </div>
+          <br class="clear" />
+          <% end %>
+        </div>
+      </div><!--/tweetarea-->
+
+    </div><!--/pad-->
+  </div><!--/main-->
+  <%= render "shared/sidebar" %>
+</div><!--/section-->
