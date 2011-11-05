@@ -31,6 +31,7 @@ gem 'oauth'
 gem 'rubytter'
 gem 'settingslogic'
 gem 'httpclient'
+gem 'heroku'
 #gem 'jpmobile', '0.1.6', :require => 'action_pack'
 
 group :production do
