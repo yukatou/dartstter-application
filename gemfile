@@ -35,3 +35,8 @@ gem "bson_ext", "1.0.4"
 gem 'settingslogic'
 gem 'httpclient'
 gem 'jpmobile', '0.1.6', :require => 'action_pack'
+
+#group :production do
+#  gem 'therubyracer-heroku', '0.8.1.pre3'
+#  gem 'pg'
+#end
