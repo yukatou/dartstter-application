@@ -123,7 +123,7 @@ DEPENDENCIES
   jquery-rails
   oauth
   pg
-  rails (= 3.1.1)
+  rails (>= 3.0.0)
   rubytter
   sass-rails (~> 3.1.4)
   settingslogic
