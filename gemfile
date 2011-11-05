@@ -31,7 +31,6 @@ gem 'jquery-rails'
 gem 'jquery-rails'
 gem 'oauth'
 gem 'rubytter'
-gem "bson_ext", "1.0.4"
 gem 'settingslogic'
 gem 'httpclient'
 gem 'jpmobile', '0.1.6', :require => 'action_pack'
